@@ -44,14 +44,15 @@ int romanToInt(char * s){
     int number = 0;
     int i = 0;
     int j = 1;
-	char *num_to_evaluate_1;
-	char *num_to_evaluate_2;
+	char *num_to_evaluate_1 = (char *) malloc(2 * sizeof(char));
+	char *num_to_evaluate_2 = (char *) malloc(3 * sizeof(char));
 
     while(s[i])
 	{
-		if((s[i+1] != '\0') && (s[i+1] == ('V' || 'X' || 'L' || 'C' || 'D' || 'M')))
+		if((s[i] == ('I') && (s[i+1] == 'V' || s[i+1] == 'X')) || 
+			(s[i] == ('X') && (s[i+1] == 'L' || s[i+1] == 'C'))  || 
+			(s[i] == ('C') && (s[i+1] == 'D' || s[i+1] == 'M')))
 		{
-			num_to_evaluate_2 = (char *) malloc(3 * sizeof(char));
 			num_to_evaluate_2[0] = s[i++];
 			num_to_evaluate_2[1] = s[i++];
 			num_to_evaluate_2[2] = '\0';
@@ -59,33 +60,11 @@ int romanToInt(char * s){
 		}
 		else
 		{
-			num_to_evaluate_1 = (char *) malloc(2 * sizeof(char));
 			num_to_evaluate_1[0] = s[i++];
 			num_to_evaluate_1[1] = '\0';
 			number += select_number(num_to_evaluate_1);
-		}	
+		}
 	}
     
     return number;
-}
-
-int main(void)
-{
-	char *string = (char *) malloc(8);
-	string[0] = 'M';
-	string[1] = 'C';
-	string[2] = 'M';
-	string[3] = 'X';
-	string[4] = 'C';
-	string[5] = 'I';
-	string[6] = 'V';
-	string[7] = '\0';
-	//MCMXCIV"
-	int number = 0;
-
-	number = select_number(string);
-	printf("HOLA");
-	printf("%d",number);
-
-	return 0;
 }

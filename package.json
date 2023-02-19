@@ -1,0 +1,22 @@
+{
+  "name": "technical-interview-problems",
+  "version": "1.0.0",
+  "description": "List of problem coding interviews answered by me.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillermovahi/Amazon-Interview-Questions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillermovahi/Amazon-Interview-Questions/issues"
+  },
+  "homepage": "https://github.com/guillermovahi/Amazon-Interview-Questions#readme",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}

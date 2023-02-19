@@ -1,3 +1,3 @@
-# Amazon Interview Questions
+# Technical Interview Questions
 
-List of Amazon coding interviews answered by me.
+List of problem coding interviews answered by me.
